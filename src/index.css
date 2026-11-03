@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+  }
+  body {
+    @apply bg-brand-50 text-brand-800 font-sans antialiased;
+  }
+  .dark body {
+    @apply bg-brand-950 text-brand-200;
+  }
+  * {
+    @apply border-brand-200 dark:border-brand-800;
+  }
+}
+
+@layer components {
+  .card {
+    @apply rounded-xl border bg-white shadow-sm dark:bg-brand-900 dark:border-brand-800;
+  }
+  .input {
+    @apply w-full rounded-lg border bg-white px-3 py-2 text-sm text-brand-800 placeholder-brand-400 outline-none transition focus:border-savings-500 focus:ring-2 focus:ring-savings-500/20 dark:bg-brand-800 dark:text-brand-100 dark:placeholder-brand-500;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2 text-sm font-medium transition focus:outline-none focus:ring-2 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .btn-primary {
+    @apply btn bg-savings-600 text-white hover:bg-savings-700 focus:ring-savings-500;
+  }
+  .btn-secondary {
+    @apply btn border bg-white text-brand-700 hover:bg-brand-100 dark:bg-brand-800 dark:text-brand-100 dark:hover:bg-brand-700;
+  }
+  .btn-ghost {
+    @apply btn text-brand-600 hover:bg-brand-100 dark:text-brand-300 dark:hover:bg-brand-800;
+  }
+}
+
+/* Slim scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  @apply rounded-full bg-brand-300 dark:bg-brand-700;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
